@@ -1,0 +1,196 @@
+Archive member included to satisfy reference by file (symbol)
+
+/courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                              (start)
+/courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Init_IDT)
+/courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Init_CRT)
+/courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+                              main.o (SetCursorPosition)
+/courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Init8259)
+/courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Init8253)
+/courses/TDDI11/sw/lib/elf/libepc.a(cycles.o)
+                              main.o (CPU_Clock_Cycles)
+/courses/TDDI11/sw/lib/elf/libepc.a(checkcpu.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o) (Check_CPU)
+/courses/TDDI11/sw/lib/elf/libepc.a(io.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o) (ISR_PIC1)
+/courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+                              /courses/TDDI11/sw/lib/elf/libepc.a(io.o) (Enqueue)
+/courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+                              main.o (__udivdi3)
+
+Discarded input sections
+
+ .eh_frame      0x0000000000000000       0xd0 main.o
+ .eh_frame      0x0000000000000000       0x84 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+conventional     0x0000000000000000 0x00000000000a0000
+reserved         0x00000000000a0000 0x0000000000060000
+extended         0x0000000000100000 0x00000000fff00000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD main.o
+LOAD llmultiply.o
+LOAD /courses/TDDI11/sw/lib/elf/libepc.a
+LOAD /courses/TDDI11/sw/lib/elf/djgpp/libc.a
+LOAD /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a
+
+.text           0x0000000000000000     0x185f
+                0x0000000000000000                text_frst = .
+ *(.start)
+ .start         0x0000000000000000        0x8 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                0x0000000000000000                start
+ *(.init)
+ *(.text)
+ .text          0x0000000000000008       0xb3 main.o
+                0x0000000000000008                cmultiply
+                0x0000000000000094                PutUnsignedLongLong
+ *fill*         0x00000000000000bb        0x5 
+ .text          0x00000000000000c0       0x57 llmultiply.o
+                0x00000000000000c0                llmultiply
+ *fill*         0x0000000000000117        0x1 
+ .text          0x0000000000000118       0x50 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                0x0000000000000118                Init_CPU
+ .text          0x0000000000000168      0x5a0 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+                0x0000000000000578                IRQ2INT
+                0x000000000000058c                _GetISR
+                0x00000000000005d0                SetISR
+                0x0000000000000608                Init_IDT
+ .text          0x0000000000000708      0x110 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+                0x0000000000000708                Init_CRT
+                0x000000000000073c                _LastMemoryAddress
+ .text          0x0000000000000818      0x6e0 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+                0x0000000000000818                SetCursorVisible
+                0x000000000000089c                _GetCursorRow
+                0x00000000000008b0                _GetCursorCol
+                0x00000000000008c4                SetCursorPosition
+                0x0000000000000968                ClearScreen
+                0x00000000000009d0                _PutAttb
+                0x0000000000000a1c                _PutCharAt
+                0x0000000000000a48                _PutChar
+                0x0000000000000acc                PutString
+                0x0000000000000b04                PutUnsigned
+                0x0000000000000b3c                FormatUnsigned
+                0x0000000000000bcc                Unsigned2Ascii
+                0x0000000000000c50                _Cell
+ .text          0x0000000000000ef8       0xe0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+                0x0000000000000ef8                Init8259
+ .text          0x0000000000000fd8       0xb0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+                0x0000000000000fd8                Init8253
+ .text          0x0000000000001088       0x70 /courses/TDDI11/sw/lib/elf/libepc.a(cycles.o)
+                0x0000000000001088                CPU_Clock_Cycles
+ .text          0x00000000000010f8       0x98 /courses/TDDI11/sw/lib/elf/libepc.a(checkcpu.o)
+                0x00000000000010f8                Check_CPU
+ .text          0x0000000000001190       0x60 /courses/TDDI11/sw/lib/elf/libepc.a(io.o)
+                0x0000000000001190                TimerTickISR
+                0x000000000000119c                KeyboardISR
+                0x00000000000011bc                ISR_PIC1
+                0x00000000000011c3                ISR_PIC2
+                0x00000000000011cc                ___main
+                0x00000000000011cd                inportb
+                0x00000000000011d7                outportb
+                0x00000000000011e9                _exit
+ .text          0x00000000000011f0      0x570 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+                0x00000000000011f0                ScanCodeRdy
+                0x0000000000001214                GetScanCode
+                0x0000000000001244                ScanCode2Ascii
+                0x0000000000001404                SetsKybdState
+                0x00000000000015f4                Enqueue
+ .text          0x0000000000001760       0xff /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+                0x0000000000001760                __udivdi3
+                0x000000000000185e                text_last = (. - 0x1)
+
+.text.startup   0x0000000000001860      0x165
+ .text.startup  0x0000000000001860      0x165 main.o
+                0x0000000000001860                main
+
+.data           0x00000000000019e0      0x789
+                0x00000000000019e0                data_frst = .
+ *(.data)
+ .data          0x00000000000019e0       0xc0 main.o
+                0x00000000000019e0                cases
+ .data          0x0000000000001aa0        0x0 llmultiply.o
+ .data          0x0000000000001aa0       0x20 /courses/TDDI11/sw/lib/elf/libepc.a(init-cpu.o)
+                0x0000000000001abe                code_selector
+ .data          0x0000000000001ac0       0x90 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+ .data          0x0000000000001b50       0x10 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+ .data          0x0000000000001b60       0x30 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+ .data          0x0000000000001b90        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+ .data          0x0000000000001b90        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+ .data          0x0000000000001b90        0x4 /courses/TDDI11/sw/lib/elf/libepc.a(cycles.o)
+ .data          0x0000000000001b94        0xc /courses/TDDI11/sw/lib/elf/libepc.a(io.o)
+                0x0000000000001b94                msec
+                0x0000000000001b98                old_tick_isr
+                0x0000000000001b9c                old_kybd_isr
+ .data          0x0000000000001ba0      0x5a0 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+ .data          0x0000000000002140        0x0 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+ *(.rodata)
+ *(.rodata.str1.1)
+ .rodata.str1.1
+                0x0000000000002140       0x29 main.o
+ *(.rodata.str1.32)
+                0x0000000000002168                data_last = (. - 0x1)
+
+.bss            0x000000000000216c      0x83c
+                0x000000000000216c                bss_frst = .
+ *(.bss)
+ .bss           0x000000000000216c        0x0 main.o
+ .bss           0x000000000000216c      0x800 /courses/TDDI11/sw/lib/elf/libepc.a(init-idt.o)
+ .bss           0x000000000000296c        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init-crt.o)
+ .bss           0x000000000000296c        0x8 /courses/TDDI11/sw/lib/elf/libepc.a(display.o)
+ .bss           0x0000000000002974        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8259.o)
+ .bss           0x0000000000002974        0x0 /courses/TDDI11/sw/lib/elf/libepc.a(init8253.o)
+ .bss           0x0000000000002974       0x34 /courses/TDDI11/sw/lib/elf/libepc.a(keyboard.o)
+ .bss           0x00000000000029a8        0x0 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+ *(COMMON)
+                0x00000000000029a7                bss_last = (. - 0x1)
+
+/DISCARD/
+ *(.eh_frame)
+                0x00000000000029a8                stack_frst = (bss_last + 0x1)
+                0x000000000000a9a7                stack_last = (bss_last + 0x8000)
+                0x000000000000a9a8                heap_frst = (stack_last + 0x1)
+OUTPUT(embedded.bin binary)
+
+.debug_info     0x0000000000000000      0xd96
+ .debug_info    0x0000000000000000      0x367 main.o
+ .debug_info    0x0000000000000367      0xa2f /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+.debug_abbrev   0x0000000000000000      0x34e
+ .debug_abbrev  0x0000000000000000      0x149 main.o
+ .debug_abbrev  0x0000000000000149      0x205 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+.debug_loc      0x0000000000000000      0xa2f
+ .debug_loc     0x0000000000000000      0x39e main.o
+ .debug_loc     0x000000000000039e      0x691 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+.debug_aranges  0x0000000000000000       0x48
+ .debug_aranges
+                0x0000000000000000       0x28 main.o
+ .debug_aranges
+                0x0000000000000028       0x20 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+.debug_ranges   0x0000000000000000       0x40
+ .debug_ranges  0x0000000000000000       0x18 main.o
+ .debug_ranges  0x0000000000000018       0x28 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+.debug_line     0x0000000000000000      0x1f8
+ .debug_line    0x0000000000000000       0xc1 main.o
+ .debug_line    0x00000000000000c1      0x137 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+.debug_str      0x0000000000000000      0xc2c
+ .debug_str     0x0000000000000000      0x19c main.o
+ .debug_str     0x000000000000019c      0xa90 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
+
+.comment        0x0000000000000000       0x24
+ .comment       0x0000000000000000       0x12 main.o
+ .comment       0x0000000000000012       0x12 /courses/TDDI11/sw/i386-elf-gcc-7.3.0/lib/gcc/i386-elf/7.3.0/libgcc.a(_udivdi3.o)
